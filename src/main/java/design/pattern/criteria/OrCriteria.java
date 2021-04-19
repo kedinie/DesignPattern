@@ -1,0 +1,23 @@
+package design.pattern.criteria;
+
+import java.util.List;
+
+public class OrCriteria implements Criteria{
+    private Criteria criteria;
+    private Criteria otherCriteria;
+
+    public OrCriteria(Criteria criteria, Criteria otherCriteria) {
+        this.criteria = criteria;
+        this.otherCriteria = otherCriteria;
+    }
+    @Override
+    public List<Person> meetCriteria(List<Person> persons) {
+        List<Person> people = criteria.meetCriteria(persons);
+        for (Person person : otherCriteria.meetCriteria(persons)) {
+            if (!people.contains(person)) {
+                people.add(person);
+            }
+        }
+        return people;
+    }
+}
