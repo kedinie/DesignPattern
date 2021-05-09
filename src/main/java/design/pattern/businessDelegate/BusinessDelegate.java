@@ -1,4 +1,4 @@
-package design.pattern.delegate;
+package design.pattern.businessDelegate;
 
 public class BusinessDelegate {
     private BusinessLookUp lookUpService = new BusinessLookUp();
