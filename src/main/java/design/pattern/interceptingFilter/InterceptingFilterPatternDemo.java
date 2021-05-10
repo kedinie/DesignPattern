@@ -1,6 +1,6 @@
 package design.pattern.interceptingFilter;
 
-public class InterceptingFilterDemo {
+public class InterceptingFilterPatternDemo {
     public static void main(String[] args) {
         FilterManager filterManager = new FilterManager(new Target());
         filterManager.setFilter(new AuthenticationFilter());
